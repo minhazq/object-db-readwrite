@@ -20,7 +20,7 @@
 
     <section class="main-content">
       <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><b><u><i>Serialize Java Object to Database (MySQL)</i></u></b></h3>
+<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><b><u><i>Read & Write Java Object to Database (MySQL)</i></u></b></h3>
  <p>In order to <u>write Java-Object</u> to database , you need to have a column which type is <b><font color="#121EFF">longblob</font></b> And you need the following Objects :
 
 <ul>
@@ -30,9 +30,20 @@
     <li><b>PreparedStatement</b> from <font color="#4262FF">java.sq</font>l package</li>
 </ul> 
 </p>
-<p>If you want to <u>read java-Object</u> from database then besides Connection and PreparedStatement Object you need <b>ByteArrayInputStream</b> & <b>ObjectInputStream</b> from <font color="#4262FF">java.io package</font></p>
-
-
+<p>If you want to <u>read java-Object</u> from database then besides Connection and PreparedStatement Object you need <b>ByteArrayInputStream</b> & <b>ObjectInputStream</b> from <font color="#4262FF">java.io</font> package</p>
+<p><font color="#000080">First Step:</font> Create a Table named "javaObject" which has only two columns. 1st Column is "id" Auto Increment,  2nd columns is "javaObject" and type will be <b><u>longblob</u></b></p>
+<p>===========================================================</p>
+<p><font color="#000080">create table</font> javaobject (id <font color="#000080">int</font>(10) <font color="#000080">auto_increment</font> , javaobject <font color="#000080">longblob</font> , <font color="#000080">primary key</font> (id))</p>
+ <p>===========================================================</p>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/minhazq/object-db-readwrite">Object-db-readwrite</a> is maintained by <a href="https://github.com/minhazq">minhazq</a>.</span>
 
