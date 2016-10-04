@@ -31,19 +31,26 @@
 </ul> 
 </p>
 <p>If you want to <u>read java-Object</u> from database then besides Connection and PreparedStatement Object you need <b>ByteArrayInputStream</b> & <b>ObjectInputStream</b> from <font color="#4262FF">java.io</font> package</p>
-<p><font color="#000080">First Step:</font> Create a Table named "javaObject" which has only two columns. 1st Column is "id" Auto Increment,  2nd columns is "javaObject" and type will be <b><u>longblob</u></b></p>
+<p><font color="#000080"><b><u>First Step:</u></b></font> Create a Table named "javaObject" which has only two columns. 1st Column is "id" Auto Increment,  2nd columns is "javaObject" and type will be <b><u>longblob</u></b></p>
 <p>===========================================================</p>
 <p><font color="#000080">create table</font> javaobject (id <font color="#000080">int</font>(10) <font color="#000080">auto_increment</font> , javaobject <font color="#000080">longblob</font> , <font color="#000080">primary key</font> (id))</p>
- <p>===========================================================</p>
- 
- 
- 
- 
- 
- 
- 
- 
- 
+<p>===========================================================</p>
+<p>After creating the above table , create a maven java project and add the following dependency in your POM file.</p> 
+<p><img src="images/dependency.JPG" width="410" height="148" alt="" title="" /></p>
+<p>Thats all you need to get started.</p>
+<p>Lets take a look at the Client class where we will write an Object of MyClass. Before that Ofcourse you need to create a class named MyClass and there will be 2 properties.
+Number 1 will be Long Id and String name and generate Setter and Getter Methods. Now in your main class where you will write the object to database is as follows:</p>
+<p>
+<img src="images/Client-Class.JPG" width="870" height="739" alt="" title="" />
+</p>
+<p>In the above example we can see that After Creating Connection and MyClass object we created ByteArrayOutputStream and ObjectOutputStream. Using ObjectOutPutStream we write the object to ByteArrayOutputStream.
+So all the information of the object exists in ByteArrayOutputStream object. Now Convert the ByteArrayOutputStream object to byte array. We created the PreparedStatement using
+Connection Object and send the sql query. </p>
+<p>sql = "inser into tableName (columntName) values(?)"</p>
+<p>PreparedStatement as a method called setObject where i can send the byte array data and call execute.</p>
+<p>Thats all. If you check your database you will be able to see that one entry has been entered.</p>
+<p>For reading data take a look at my Client2 class.</p>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/minhazq/object-db-readwrite">Object-db-readwrite</a> is maintained by <a href="https://github.com/minhazq">minhazq</a>.</span>
 
